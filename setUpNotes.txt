@@ -1,0 +1,52 @@
+Group 11
+Kalon Moco + Lexi Allyson Sario
+
+Open Sky Flight - https://openskynetwork.github.io/opensky-api/rest.html 
+
+TO DO / PLAN:
+- figure out API (research)
+- look at URLs + figure out data/info
+- figure out how JSON/CSV files on site present / display
+    - if we need to scrape we scrape 
+
+PLAN (REVISED):
+1. Research
+2. Figure out what code to write
+3. Check-in on Tuesday MAY 6
+4. Draft 1 of code (FINISH BY WEDNESDAY MAY 7TH JUST IN CASE WE'RE DOOKIE)
+    - have questions prepared for office hours
+    - backups: email TA or Piazza or check in with professor after class
+5. Ask questions 
+6. Revise code
+7. Ask more questions if necessary (refer to calendar)
+8. Double check formatting, citation, and documentation
+9. Finish PLEASE
+
+CODE TASKS
+- automate data
+- define requests library in Python
+- define successful connection + screenshot 
+    - pip install requests
+    - import requests
+
+- ways to display data
+    - pandas DataFrame
+    - CSV library
+    - json
+
+- plot data over time
+    - lmatplotlib library (research)
+
+- answer questions
+
+1. Plot the number of planes in the air over time?
+2. How many planes are in the air right now?
+3. What is the average altitude and speed of active planes?
+4. Where are the flights concentrated right now?
+
+- requirements
+    - pdf w/ explanations + diagrams - readme with citations of videos + research
+    - JSON/CSV files
+    - python file
+
+    MAKE SURE DOCUMENTATION IS PRETTY
