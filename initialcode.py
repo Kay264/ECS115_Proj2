@@ -13,31 +13,89 @@ Purposes:
 import requests 
 import json
 
+##### kalon code
+
 api = requests.get('https://opensky-network.org/api/states/all')
 flights = requests.get('https://opensky-network.org/api/flights/all?begin=1746644400&end=1746648000')
-
 states = requests.get('https://opensky-network.org/api/states/all')
+
 data = states.json()
+
+
+print(api) 
+
+count1 = 0
+for obj in flights:
+    count1 += 1
+""" print("all flights in given time frame:", count1)
+ """
+count2 = 0
+for obj in states:
+    count2 += 1
+""" print("all  flights now:", count2) """
+
+
 states = data.get('states', []) 
 
-# Function to calculate average of a property of a flight
-def avg_count(property): 
-    sum = 0
-    count = 0
+sum = 0
+count3 = 0
 
-    for state_vector in states:
-        if isinstance(state_vector, list) and len(state_vector) > 13 and isinstance(state_vector[property], (int, float)):
-            sum += state_vector[property]
-            count += 1
-    
-    return (sum/count)
+for state_vector in states:
+    if isinstance(state_vector, list) and len(state_vector) > 13 and isinstance(state_vector[13], (int, float)):
+         sum += state_vector[13]
+         count3 += 1
 
-print("Connection check:", api) # checks if connection is successful (200 response)
+""" print(sum)
+print(count3)
+print(sum/count3) """
 
-# #1
-print("\n1. Plot the number of planes in the air over time.")
+sum2 = 0
+count4 = 0
 
-# reference this i think and use matplotlib. make this look less like doodoo maybe if we can
+for state_vector in states:
+    if isinstance(state_vector, list) and len(state_vector) > 13 and isinstance(state_vector[9], (int, float)):
+         sum2 += state_vector[9]
+         count4 += 1
+
+""" print(sum2)
+print(count4)
+print(sum2/count4) """
+
+
+sum3 = 0
+count5 = 0
+
+for state_vector in states:
+    if isinstance(state_vector, list) and len(state_vector) > 13 and isinstance(state_vector[5], (int, float)):
+         sum3 += state_vector[5]
+         count5 += 1
+
+""" print(sum3)
+print(count5)
+print("Average Longitude:", sum3/count5) """
+
+sum4 = 0
+count6 = 0
+
+for state_vector in states:
+    if isinstance(state_vector, list) and len(state_vector) > 13 and isinstance(state_vector[6], (int, float)):
+         sum4 += state_vector[6]
+         count6 += 1
+""" 
+print(sum4)
+print(count6)
+print("Average Latitude:", sum4/count6) """
+
+
+
+
+""" 
+
+with open('data.json', 'w', encoding='utf-8') as f:
+    json.dump(states, f, ensure_ascii=False, indent=4)
+ """
+
+
 a = requests.get('https://opensky-network.org/api/flights/all?begin=1746644400&end=1746648000')
 b = requests.get('https://opensky-network.org/api/flights/all?begin=1746648000&end=1746651600')
 c = requests.get('https://opensky-network.org/api/flights/all?begin=1746651600&end=1746655200')
@@ -98,19 +156,20 @@ numList = [numA, numB, numC, numD, numE, numF, numG, numH, numI, numJ, numK]
 
 print(numList)
 
-# #2
-print("\n2. How many planes are in the air right now?")
-planes = 0
-for obj in states: # count each object in states
-    planes += 1
-print(planes, "planes are in the air right now")
 
-# #3
-print("\n3. What is the average altitude and speed of active planes?")
-print("Average Altitude:", avg_count(13), "meters")
-print("Average Speed:", avg_count(9), "meters per second")
 
-# #4
-print("\n4. Where are the flights concentrated right now?")
-print("Average Longitude:", avg_count(5), "degrees")
-print("Average Latitude:", avg_count(6), "degrees")
+'''
+NOTES:
+
+start times: 1746679440, 1746644400
+
+end times: 1746683040, 1746648000
+
+{"icao24":"c078fd","firstSeen":1517227317,"estDepartureAirport":"CYYZ","lastSeen":1517230676,"estArrivalAirport":"CYUL","callsign":"SWG9426 ","estDepartureAirportHorizDistance":525,"estDepartureAirportVertDistance":104,"estArrivalAirportHorizDistance":3244,"estArrivalAirportVertDistance":81,"departureAirportCandidatesCount":1,"arrivalAirportCandidatesCount":1}
+
+
+["a35a97","N315NG  ","United States",1746682133,1746682133,-111.7467,35.216,6096,false,150.09,196.32,-0.65,null,6301.74,null,false,0]
+
+
+
+'''
