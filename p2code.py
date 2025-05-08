@@ -20,6 +20,11 @@ states = requests.get('https://opensky-network.org/api/states/all')
 data = states.json()
 states = data.get('states', []) 
 
+''' # code to create json file with data, make sure to uncomment for submission?
+with open('data.json', 'w', encoding='utf-8') as f:
+    json.dump(states, f, ensure_ascii=False, indent=4)
+'''
+
 # Function to calculate average of a property of a flight
 def avg_count(property): 
     sum = 0
