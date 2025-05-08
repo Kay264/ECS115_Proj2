@@ -14,6 +14,7 @@ s = requests.get('https://opensky-network.org/api/states/all')
 
 data = s.json()
 
+
 """ print(r.text) """
 count1 = 0
 for obj in r:
@@ -86,6 +87,66 @@ with open('data.json', 'w', encoding='utf-8') as f:
     json.dump(states, f, ensure_ascii=False, indent=4)
  """
 
+
+a = requests.get('https://opensky-network.org/api/flights/all?begin=1746644400&end=1746648000')
+b = requests.get('https://opensky-network.org/api/flights/all?begin=1746648000&end=1746651600')
+c = requests.get('https://opensky-network.org/api/flights/all?begin=1746651600&end=1746655200')
+d = requests.get('https://opensky-network.org/api/flights/all?begin=1746655200&end=1746648000')
+e = requests.get('https://opensky-network.org/api/flights/all?begin=1746648000&end=1746658800')
+f = requests.get('https://opensky-network.org/api/flights/all?begin=1746658800&end=1746662400')
+g = requests.get('https://opensky-network.org/api/flights/all?begin=1746662400&end=1746666000')
+h = requests.get('https://opensky-network.org/api/flights/all?begin=1746666000&end=1746669600')
+i = requests.get('https://opensky-network.org/api/flights/all?begin=1746669600&end=1746673200')
+j = requests.get('https://opensky-network.org/api/flights/all?begin=1746673200&end=1746676800')
+k = requests.get('https://opensky-network.org/api/flights/all?begin=1746676800&end=1746680400')
+
+numA = 0
+for obj in a:
+    numA += 1
+
+numB = 0
+for obj in b:
+    numB += 1
+
+numC = 0
+for obj in c:
+    numC += 1
+
+numD = 0
+for obj in d:
+    numD += 1
+
+numE = 0
+for obj in e:
+    numE += 1
+
+numF = 0
+for obj in f:
+    numF += 1
+
+numG = 0
+for obj in g:
+    numG += 1
+
+numH = 0
+for obj in h:
+    numH += 1
+
+numI = 0
+for obj in i:
+    numI += 1
+
+numJ = 0
+for obj in j:
+    numJ += 1
+
+numK = 0
+for obj in k:
+    numK += 1
+
+numList = [numA, numB, numC, numD, numE, numF, numG, numH, numI, numJ, numK]
+
+print(numList)
 
 
 
