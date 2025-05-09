@@ -43,20 +43,21 @@ print("Connection check:", api) # checks if connection is successful (200 respon
 print("\n1. Plot the number of planes in the air over time.")
 
 # reference this i think and use matplotlib. make this look less like doodoo maybe if we can
-a = requests.get('https://opensky-network.org/api/flights/all?begin=1746644400&end=1746648000') #
-b = requests.get('https://opensky-network.org/api/flights/all?begin=1746648000&end=1746651600') #
-c = requests.get('https://opensky-network.org/api/flights/all?begin=1746651600&end=1746655200') #
+# Planes over May 7th, 2025, PST
+a = requests.get('https://opensky-network.org/api/flights/all?begin=1746644400&end=1746648000') # 12pm - 1pm
+b = requests.get('https://opensky-network.org/api/flights/all?begin=1746648000&end=1746651600') # 1pm - 2pm
+c = requests.get('https://opensky-network.org/api/flights/all?begin=1746651600&end=1746655200') # 2pm - 3pm
 
-d = requests.get('https://opensky-network.org/api/flights/all?begin=1746655200&end=1746648000') #
-e = requests.get('https://opensky-network.org/api/flights/all?begin=1746648000&end=1746658800') #
-f = requests.get('https://opensky-network.org/api/flights/all?begin=1746658800&end=1746662400') #
+d = requests.get('https://opensky-network.org/api/flights/all?begin=1746655200&end=1746658800') # 3pm - 4pm
+e = requests.get('https://opensky-network.org/api/flights/all?begin=1746658800&end=1746662400') # 4pm - 5pm
+f = requests.get('https://opensky-network.org/api/flights/all?begin=1746662400&end=1746666000') # 6pm - 7pm
 
-g = requests.get('https://opensky-network.org/api/flights/all?begin=1746662400&end=1746666000') #
-h = requests.get('https://opensky-network.org/api/flights/all?begin=1746666000&end=1746669600') #
-i = requests.get('https://opensky-network.org/api/flights/all?begin=1746669600&end=1746673200') #
+g = requests.get('https://opensky-network.org/api/flights/all?begin=1746666000&end=1746669600') # 7pm - 8pm
+h = requests.get('https://opensky-network.org/api/flights/all?begin=1746669600&end=1746673200') # 8pm - 9pm
+i = requests.get('https://opensky-network.org/api/flights/all?begin=1746673200&end=1746676800') # 9pm - 10pm
 
-j = requests.get('https://opensky-network.org/api/flights/all?begin=1746673200&end=1746676800') #
-k = requests.get('https://opensky-network.org/api/flights/all?begin=1746676800&end=1746680400') #
+j = requests.get('https://opensky-network.org/api/flights/all?begin=1746676800&end=1746680400') # 10pm - 11pm
+k = requests.get('https://opensky-network.org/api/flights/all?begin=1746680400&end=1746684000') # 11pm - 12pm
 
 
 numA = 0
