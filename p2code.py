@@ -12,6 +12,8 @@ Purposes:
 
 import requests 
 import json
+import matplotlib.pyplot as plt
+import numpy as np
 
 api = requests.get('https://opensky-network.org/api/states/all')
 flights = requests.get('https://opensky-network.org/api/flights/all?begin=1746644400&end=1746648000')
@@ -20,7 +22,9 @@ states = requests.get('https://opensky-network.org/api/states/all')
 data = states.json()
 states = data.get('states', []) 
 
-''' # code to create json file with data, make sure to uncomment for submission?
+# Code to create json file with the data
+# make sure to uncomment for submission
+'''
 with open('data.json', 'w', encoding='utf-8') as f:
     json.dump(states, f, ensure_ascii=False, indent=4)
 '''
@@ -64,7 +68,6 @@ numA = 0
 for obj in a:
     numA += 1
 
-
 numB = 0
 for obj in b:
     numB += 1
@@ -105,12 +108,18 @@ numK = 0
 for obj in k:
     numK += 1
 
-print(a.text)
+numList = [numA, numB, numC, numD, numE, numF, numG, numH, numI, numJ, numK] # number of planes - y axis
+timeList = [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22] # time, military time - x axis
 
-numList = [numA, numB, numC, numD, numE, numF, numG, numH, numI, numJ, numK]
+# matplotlib graph creation
+plt.plot(timeList, numList, color="blue", marker="o", linestyle="-")
+plt.xlabel("Time in Military Time (1 hour intervals)")
+plt.ylabel("Planes")
 
-print(numList)
+plt.suptitle("Number of Planes in the Sky")
+plt.title("May 7th, 12PM - 12AM")
 
+plt.show()
 
 # #2
 print("\n2. How many planes are in the air right now?")
