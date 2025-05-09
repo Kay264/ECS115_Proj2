@@ -44,6 +44,7 @@ print("\n1. Plot the number of planes in the air over time.")
 
 # reference this i think and use matplotlib. make this look less like doodoo maybe if we can
 a = requests.get('https://opensky-network.org/api/flights/all?begin=1746644400&end=1746648000')
+'''
 b = requests.get('https://opensky-network.org/api/flights/all?begin=1746648000&end=1746651600')
 c = requests.get('https://opensky-network.org/api/flights/all?begin=1746651600&end=1746655200')
 d = requests.get('https://opensky-network.org/api/flights/all?begin=1746655200&end=1746648000')
@@ -54,11 +55,13 @@ h = requests.get('https://opensky-network.org/api/flights/all?begin=1746666000&e
 i = requests.get('https://opensky-network.org/api/flights/all?begin=1746669600&end=1746673200')
 j = requests.get('https://opensky-network.org/api/flights/all?begin=1746673200&end=1746676800')
 k = requests.get('https://opensky-network.org/api/flights/all?begin=1746676800&end=1746680400')
+'''
 
 numA = 0
 for obj in a:
     numA += 1
 
+'''
 numB = 0
 for obj in b:
     numB += 1
@@ -99,9 +102,12 @@ numK = 0
 for obj in k:
     numK += 1
 
-numList = [numA, numB, numC, numD, numE, numF, numG, numH, numI, numJ, numK]
+'''
 
-print(numList)
+print(a.text)
+# numList = [numA, numB, numC, numD, numE, numF, numG, numH, numI, numJ, numK]
+
+# print(numList)
 
 # #2
 print("\n2. How many planes are in the air right now?")
