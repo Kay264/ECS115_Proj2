@@ -105,11 +105,12 @@ numK = 0
 for obj in k:
     numK += 1
 
+print(a.text)
 
 numList = [numA, numB, numC, numD, numE, numF, numG, numH, numI, numJ, numK]
 
 print(numList)
-print(d.text)
+
 
 # #2
 print("\n2. How many planes are in the air right now?")
